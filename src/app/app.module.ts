@@ -9,8 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ManageCustomerComponent } from './components/manage-customer/manage-customer.component';
@@ -37,8 +36,6 @@ import { PaymentsComponent } from './components/payments/payments.component';
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
-    NgbModule,
-    FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
