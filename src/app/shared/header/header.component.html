@@ -3,15 +3,46 @@
   <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-   
+
+
+<!-- new data -->
+<ul class="navbar-nav">
+  <!-- <li class="nav-item">
+    <a class="nav-link active" aria-current="page" [routerLink]="['/bar-chart']" >Bar chart</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/charts/doughnut']">Doughnut Chart</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/charts/line-chart']">Line Chart</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/charts/polar-chart']">Polar Chart</a>
+  </li> -->
+  <!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     Charts
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <li><a class="dropdown-item" [routerLink]="['/bar-chart']">Bar chart</a></li>
+      <li><a class="dropdown-item" [routerLink]="['/charts/doughnut']">Doughnut</a></li>
+      <li><a class="dropdown-item"  [routerLink]="['/charts/line-chart']">Line Chart</a></li>
+      <li><a class="dropdown-item"  [routerLink]="['/charts/polar-chart']">Polar Chart</a></li>
+    </ul>
+  </li> -->
+</ul>
+<!-- new data -->
+
+
+
       <div class="ms-auto" *ngIf="isLogged">
         <span class="me-2 fst-italic">Welcome {{username}}</span>
       </div>
     </div>
-    <div class="d-flex align-items-center ">
+    <!-- <div class="d-flex align-items-center ">
       <br>
 
-    </div>
+    </div> -->
   </div>
   <button type="button" class="btn btn-danger me-4" (click)="logout()">LogOut</button>
 </nav><br>

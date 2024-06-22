@@ -10,7 +10,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  childData:string='data from child'
 constructor(private _router:Router,private _toastr: ToastrService){}
 
   loginForm = new FormGroup({
