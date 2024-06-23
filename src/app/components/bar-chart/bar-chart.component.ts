@@ -1,5 +1,59 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { CommonServiceService } from 'src/app/shared/service/common-service.service';
+
+let json={
+  "cahrtData":[
+    {
+        "id":1,
+        "year":"2019",
+        "amount":"250000",
+        "product":"LENOVO LAPTOP",
+        "color":"rgba(255, 99, 132, 0.2)",
+        "borderColor":"rgba(255, 99, 132)"
+    },
+    {
+        "id":2,
+        "year":"2020",
+        "amount":"36000",
+        "product":"HP LAPTOP",
+        "color":"rgba(255, 159, 64, 0.2)",
+        "borderColor":"rgba(255, 159, 64)"
+    },
+    {
+        "id":3,
+        "year":"2021",
+        "amount":"37000",
+        "product":"ACER LAPTOP",
+        "color":"rgba(255, 205, 86, 0.2)",
+        "borderColor":"rgba(255, 205, 86)"
+    },
+    {
+        "id":4,
+        "year":"2022",
+        "amount":"57000",
+        "product":"DELL 15 THIN LAPTOP",
+        "color":"rgba(75, 192, 192, 0.2)",
+        "borderColor":"rgba(75, 192, 192)"
+    },
+    {
+        "id":5,
+        "year":"2023",
+        "amount":"31300",
+        "product":"LENOVO 15 G5 LAPTOP",
+        "color":"rgba(54, 162, 235, 0.2)",
+        "borderColor":"rgba(54, 162, 235)"
+    },
+    {
+        "id":6,
+        "year":"2024",
+        "amount":"28990",
+        "product":"LENOVO IDEAPAD",
+        "color":"rgba(153, 102, 255, 0.2)",
+        "borderColor":"rgba(153, 102, 255)"
+    }
+]
+}
 
 @Component({
   selector: 'app-bar-chart',
@@ -7,29 +61,59 @@ import { Chart, registerables } from 'chart.js';
   styleUrls: ['./bar-chart.component.css']
 })
 export class BarChartComponent {
-  constructor(){
+
+data: any;
+year:any;
+amount:any;
+color:any;
+border:any;
+
+  constructor(private _service: CommonServiceService) {
     Chart.register(...registerables);
   }
-ngOnInit(): void {
-  const ctx = document.getElementById('myChart')as HTMLCanvasElement;
+  ngOnInit(): void {
 
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+    // this._service.showData().subscribe(res => {
+    //   this.data = res;
+    //   if (this.data != null) {
+    //     this. year=this.data.map((e:any)=>e.year);
+    //     this. amount=this.data.map((e:any)=>e.amount);
+    //     this. color=this.data.map((e:any)=>e.color);
+    //     this. border=this.data.map((e:any)=>e.borderColor);
+        
+    //     this.showchartData(this.year,this.amount,this.color,this.border);
+    //   }
+    // });
+    this.data=json.cahrtData;
+    this. year=this.data.map((e:any)=>e.year);
+    this. amount=this.data.map((e:any)=>e.amount);
+    this. color=this.data.map((e:any)=>e.color);
+    this. border=this.data.map((e:any)=>e.borderColor);
+    
+    this.showchartData(this.year,this.amount,this.color,this.border);
+  }
+
+  showchartData(year: any, amount: any,color:any,border:any) {
+ 
+    new Chart('myChart', {
+      type: 'bar',
+      data: {
+        labels: year,
+        datasets: [{
+          label: 'Sell Of Laptop',
+          data: amount,
+          borderWidth: 1,
+          backgroundColor:color,
+          borderColor:border
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
       }
-    }
-  });
-}
+    });
+  }
 }

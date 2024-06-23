@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
+import { CommonServiceService } from 'src/app/shared/service/common-service.service';
 
 @Component({
   selector: 'app-polar-chart',
@@ -7,19 +8,36 @@ import { Chart, registerables } from 'chart.js';
   styleUrls: ['./polar-chart.component.css']
 })
 export class PolarChartComponent {
-  constructor(){
+
+data: any;
+year:any;
+amount:any;
+color:any;
+border:any;
+
+  constructor(private _service: CommonServiceService){
     Chart.register(...registerables);
   }
 ngOnInit(): void {
-  const ctx = document.getElementById('myChart3')as HTMLCanvasElement;
+  this._service.showData().subscribe(res => {
+    this.data = res;
+    if (this.data != null) {
+      this. year=this.data.map((e:any)=>e.year);
+      this. amount=this.data.map((e:any)=>e.amount);
+      
+      this.showchartData(this.year,this.amount);
+    }
+  });
+}
 
-  new Chart(ctx, {
+showchartData(year: any, amount: any) {
+  new Chart('myChart3', {
     type: 'polarArea',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels:year,
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: amount,
         borderWidth: 1
       }]
     },
@@ -31,5 +49,6 @@ ngOnInit(): void {
       }
     }
   });
+
 }
 }

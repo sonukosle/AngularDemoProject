@@ -1,6 +1,6 @@
-<div class="container-fluid page-body-wrapper">
+<div class="page-body-wrapper">
     <app-header></app-header>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-12">
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -8,8 +8,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container text-center">
+    </div> -->
+    <div class="text-center">
         <h2>Welcome To Admin Dashboard</h2>
     </div>
     <div class="container text-center">
@@ -24,7 +24,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                       <app-bar-chart></app-bar-chart>
+                       <!-- <app-bar-chart></app-bar-chart> -->
+                        <app-table></app-table>
                     </div>
                 </div>
             </div>
@@ -35,14 +36,16 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <app-line-chart></app-line-chart>
+                        <!-- <app-line-chart></app-line-chart> -->
+                         <app-bar-chart></app-bar-chart>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <app-polar-chart></app-polar-chart>
+                        <!-- <app-polar-chart></app-polar-chart> -->
+                        <app-table1></app-table1>
                     </div>
                 </div>
             </div>
@@ -53,5 +56,3 @@
     </div>
     <app-footer></app-footer>
 </div>
-
-<!-- <router-outlet></router-outlet> -->

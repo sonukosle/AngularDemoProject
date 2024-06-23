@@ -19,6 +19,15 @@ import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-cha
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { PolarChartComponent } from './components/polar-chart/polar-chart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import {HttpClientModule } from '@angular/common/http';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TableComponent } from './components/table/table.component';
+import { Table1Component } from './components/table1/table1.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +44,9 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     DoughnutChartComponent,
     LineChartComponent,
     PolarChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    TableComponent,
+    Table1Component,
    
   ],
   imports: [
@@ -46,6 +57,13 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    HttpClientModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    MatSortModule,
+    MatInputModule,
+    MatPaginatorModule,
+    MatFormFieldModule
   
   ],
   providers: [],
