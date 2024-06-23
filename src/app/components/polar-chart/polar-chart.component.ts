@@ -19,15 +19,15 @@ border:any;
     Chart.register(...registerables);
   }
 ngOnInit(): void {
-  this._service.showData().subscribe(res => {
-    this.data = res;
-    if (this.data != null) {
-      this. year=this.data.map((e:any)=>e.year);
-      this. amount=this.data.map((e:any)=>e.amount);
+  // this._service.showData().subscribe(res => {
+  //   this.data = res;
+  //   if (this.data != null) {
+  //     this. year=this.data.map((e:any)=>e.year);
+  //     this. amount=this.data.map((e:any)=>e.amount);
       
-      this.showchartData(this.year,this.amount);
-    }
-  });
+  //     this.showchartData(this.year,this.amount);
+  //   }
+  // });
 }
 
 showchartData(year: any, amount: any) {
