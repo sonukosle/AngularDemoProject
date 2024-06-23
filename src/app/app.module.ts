@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -19,7 +18,6 @@ import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-cha
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { PolarChartComponent } from './components/polar-chart/polar-chart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
-import {HttpClientModule } from '@angular/common/http';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -52,12 +50,10 @@ import { Table1Component } from './components/table1/table1.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    HttpClientModule,
     MatSlideToggleModule,
     MatTableModule,
     MatSortModule,
